@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Panda Apology 🌸💖</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:
+    linear-gradient(to top,#07111d,#13263f,#295988);
+    font-family:'Poppins',sans-serif;
+}
+
+/* ================= SKY ================= */
+
+.skyGlow{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center,
+    rgba(255,120,180,.12),
+    transparent 60%);
+}
+
+/* ================= MOON ================= */
+
+.moon{
+    position:absolute;
+    top:50px;
+    right:80px;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:#fff6bf;
+
+    box-shadow:
+    0 0 40px #fff6bf,
+    0 0 120px #fff6bf;
+}
+
+/* ================= STARS ================= */
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(1);
+    }
+    to{
+        opacity:1;
+        transform:scale(2);
+    }
+}
+
+/* ================= GROUND ================= */
+
+.ground{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:260px;
+
+    background:
+    linear-gradient(to top,#0d4c1b,#228b3d);
+
+    overflow:hidden;
+}
+
+/* ================= REALISTIC GRASS ================= */
+
+.grass{
+    position:absolute;
+    bottom:0;
+    width:2px;
+    border-radius:20px;
+    transform-origin:bottom;
+
+    animation:sway 2s infinite alternate ease-in-out;
+}
+
+@keyframes sway{
+    from{
+        transform:rotate(-4deg);
+    }
+    to{
+        transform:rotate(4deg);
+    }
+}
+
+/* ================= FLOWERS ================= */
+
+.flower{
+    position:absolute;
+    transform-origin:bottom;
+    animation:flowerMove 3s infinite alternate ease-in-out;
+}
+
+@keyframes flowerMove{
+    from{
+        transform:rotate(-2deg);
+    }
+    to{
+        transform:rotate(2deg);
+    }
+}
+
+.stem{
+    position:absolute;
+    width:5px;
+    height:70px;
+    background:#2ecc71;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-65px;
+    border-radius:20px;
+}
+
+/* LEAF */
+
+.leaf{
+    position:absolute;
+    width:18px;
+    height:10px;
+    background:#39d353;
+    border-radius:20px 0;
+}
+
+.leaf1{
+    left:-14px;
+    top:35px;
+    transform:rotate(-30deg);
+}
+
+.leaf2{
+    right:-14px;
+    top:48px;
+    transform:rotate(30deg);
+}
+
+/* PETALS */
+
+.petal{
+    position:absolute;
+    border-radius:50%;
+}
+
+/* ROSE */
+
+.rose .petal{
+    width:22px;
+    height:22px;
+    background:#ff2d6f;
+    box-shadow:0 0 15px #ff2d6f;
+}
+
+/* DAISY */
+
+.daisy .petal{
+    width:16px;
+    height:30px;
+    background:white;
+    box-shadow:0 0 10px white;
+}
+
+/* TULIP */
+
+.tulip .petal{
+    width:18px;
+    height:35px;
+    background:#ff66c4;
+    border-radius:50% 50% 0 0;
+    box-shadow:0 0 15px #ff66c4;
+}
+
+/* SUNFLOWER */
+
+.sunflower .petal{
+    width:14px;
+    height:36px;
+    background:#ffc400;
+    box-shadow:0 0 12px #ffc400;
+}
+
+/* LAVENDER */
+
+.lavender .petal{
+    width:12px;
+    height:18px;
+    background:#b266ff;
+    box-shadow:0 0 10px #b266ff;
+}
+
+/* CENTER */
+
+.center{
+    position:absolute;
+    width:22px;
+    height:22px;
+    background:gold;
+    border-radius:50%;
+    top:22px;
+    left:22px;
+    box-shadow:0 0 10px gold;
+}
+
+/* ================= PANDA ================= */
+
+.panda{
+    position:absolute;
+    bottom:170px;
+    left:-350px;
+
+    width:260px;
+    height:300px;
+
+    z-index:100;
+
+    animation:
+    pandaWalk 11s forwards ease-in-out,
+    pandaGrow 11s forwards;
+}
+
+/* WALK */
+
+@keyframes pandaWalk{
+    0%{
+        left:-350px;
+    }
+    100%{
+        left:35%;
+    }
+}
+
+/* GROW */
+
+@keyframes pandaGrow{
+    0%{
+        transform:scale(.4);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* HEAD */
+
+.head{
+    position:absolute;
+    width:160px;
+    height:150px;
+    background:white;
+    border-radius:50%;
+    top:0;
+    left:50px;
+
+    box-shadow:
+    inset -10px -10px 20px rgba(0,0,0,.1);
+}
+
+/* EARS */
+
+.ear{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background:black;
+    border-radius:50%;
+}
+
+.ear1{
+    top:-10px;
+    left:35px;
+}
+
+.ear2{
+    top:-10px;
+    right:35px;
+}
+
+/* EYE PATCH */
+
+.eyePatch{
+    position:absolute;
+    width:40px;
+    height:55px;
+    background:black;
+    border-radius:50%;
+    top:45px;
+}
+
+.patch1{
+    left:32px;
+    transform:rotate(-20deg);
+}
+
+.patch2{
+    right:32px;
+    transform:rotate(20deg);
+}
+
+/* EYES */
+
+.eye{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:white;
+    border-radius:50%;
+    top:22px;
+    left:13px;
+
+    animation:blink 4s infinite;
+}
+
+@keyframes blink{
+    0%,90%,100%{
+        height:12px;
+    }
+    95%{
+        height:2px;
+    }
+}
+
+/* NOSE */
+
+.nose{
+    position:absolute;
+    width:20px;
+    height:15px;
+    background:black;
+    border-radius:50%;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* MOUTH */
+
+.mouth{
+    position:absolute;
+    width:35px;
+    height:20px;
+    border-bottom:4px solid black;
+    border-radius:0 0 50px 50px;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* BODY */
+
+.body{
+    position:absolute;
+    width:190px;
+    height:150px;
+    background:white;
+    border-radius:50%;
+    bottom:0;
+    left:35px;
+
+    box-shadow:
+    inset -10px -10px 20px rgba(0,0,0,.1);
+}
+
+/* HANDS */
+
+.hand{
+    position:absolute;
+    width:45px;
+    height:100px;
+    background:black;
+    border-radius:30px;
+    top:100px;
+}
+
+.hand1{
+    left:0;
+    transform:rotate(25deg);
+}
+
+.hand2{
+    right:0;
+    transform:rotate(-25deg);
+}
+
+/* LEGS */
+
+.leg{
+    position:absolute;
+    width:50px;
+    height:80px;
+    background:black;
+    border-radius:30px;
+    bottom:-20px;
+}
+
+.leg1{
+    left:45px;
+    animation:walk1 .6s infinite alternate;
+}
+
+.leg2{
+    right:45px;
+    animation:walk2 .6s infinite alternate;
+}
+
+@keyframes walk1{
+    from{
+        transform:rotate(8deg);
+    }
+    to{
+        transform:rotate(-8deg);
+    }
+}
+
+@keyframes walk2{
+    from{
+        transform:rotate(-8deg);
+    }
+    to{
+        transform:rotate(8deg);
+    }
+}
+
+/* STOP WALK */
+
+.stopWalk .leg{
+    animation:none;
+}
+
+/* ================= FLOWER BOUQUET ================= */
+
+.bouquet{
+    position:absolute;
+    left:-60px;
+    top:90px;
+    width:120px;
+    height:120px;
+
+    animation:bouquetGlow 1.5s infinite alternate;
+}
+
+@keyframes bouquetGlow{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}
+
+.smallFlower{
+    position:absolute;
+    border-radius:50%;
+}
+
+/* ================= NOTE ================= */
+
+.note{
+    position:absolute;
+    right:-210px;
+    top:60px;
+
+    width:240px;
+    padding:18px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,.3);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    line-height:1.6;
+
+    box-shadow:
+    0 0 25px #ff69b4,
+    0 0 70px rgba(255,105,180,.4);
+
+    animation:noteGlow 2s infinite alternate;
+}
+
+@keyframes noteGlow{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.05);
+    }
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    width:750px;
+
+    padding:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:35px;
+
+    border:3px solid rgba(255,255,255,.3);
+
+    text-align:center;
+
+    color:white;
+
+    z-index:300;
+
+    box-shadow:
+    0 0 40px #ff4da6,
+    0 0 120px rgba(255,105,180,.5);
+
+    animation:popup 1.5s forwards;
+
+    animation-delay:11s;
+}
+
+@keyframes popup{
+    to{
+        transform:translate(-50%,-50%) scale(1);
+    }
+}
+
+.message h1{
+    font-size:58px;
+    margin-bottom:20px;
+}
+
+.message p{
+    font-size:28px;
+    line-height:1.7;
+    color:#ffd6ea;
+}
+
+.heart{
+    display:inline-block;
+    animation:heartBeat 1s infinite;
+}
+
+@keyframes heartBeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="skyGlow"></div>
+
+<div class="moon"></div>
+
+<div class="ground"></div>
+
+<!-- PANDA -->
+
+<div class="panda" id="panda">
+
+    <div class="head">
+
+        <div class="ear ear1"></div>
+        <div class="ear ear2"></div>
+
+        <div class="eyePatch patch1">
+            <div class="eye"></div>
+        </div>
+
+        <div class="eyePatch patch2">
+            <div class="eye"></div>
+        </div>
+
+        <div class="nose"></div>
+
+        <div class="mouth"></div>
+
+    </div>
+
+    <div class="body"></div>
+
+    <div class="hand hand1"></div>
+
+    <div class="hand hand2"></div>
+
+    <div class="leg leg1"></div>
+
+    <div class="leg leg2"></div>
+
+    <!-- FLOWERS -->
+
+    <div class="bouquet">
+
+        <div class="smallFlower" style="width:35px;height:35px;background:#ff4f93;top:10px;left:20px;box-shadow:0 0 20px #ff4f93;"></div>
+
+        <div class="smallFlower" style="width:28px;height:28px;background:#ffd700;top:35px;left:55px;box-shadow:0 0 20px #ffd700;"></div>
+
+        <div class="smallFlower" style="width:32px;height:32px;background:#b266ff;top:55px;left:15px;box-shadow:0 0 20px #b266ff;"></div>
+
+        <div class="smallFlower" style="width:30px;height:30px;background:#ffffff;top:25px;left:85px;box-shadow:0 0 20px white;"></div>
+
+        <div class="smallFlower" style="width:26px;height:26px;background:#ff884d;top:0px;left:70px;box-shadow:0 0 20px #ff884d;"></div>
+
+    </div>
+
+    <!-- NOTE -->
+
+    <div class="note">
+        💖 Something for U  💖
+        <br><br>
+        
+    </div>
+
+</div>
+
+<!-- MESSAGE -->
+
+<div class="message">
+
+    <h1>
+        <span class="heart">💖</span>
+        Please Sweetuu Ji
+    </h1>
+
+    <p>
+        Forgive Mee 🥺✨
+        <br><br>
+        I Promise I'll Always Love You,
+        Respect You,
+        Care For You,
+        And Never Hurt You Again 🌸
+    </p>
+
+</div>
+
+<script>
+
+/* ================= STARS ================= */
+
+for(let i=0;i<280;i++){
+
+    let star=document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left=Math.random()*100+"vw";
+
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDuration=
+    (Math.random()*3+1)+"s";
+
+    document.body.appendChild(star);
+}
+
+/* ================= GRASS ================= */
+
+for(let i=0;i<1800;i++){
+
+    let grass=document.createElement("div");
+
+    grass.classList.add("grass");
+
+    let h=Math.random()*100+40;
+
+    grass.style.height=h+"px";
+
+    grass.style.left=Math.random()*100+"vw";
+
+    grass.style.background=
+    `rgb(${20+Math.random()*20},
+    ${100+Math.random()*130},
+    ${20})`;
+
+    grass.style.animationDuration=
+    (Math.random()*2+1)+"s";
+
+    document.body.appendChild(grass);
+}
+
+/* ================= FLOWERS ================= */
+
+const flowerTypes=[
+"rose",
+"daisy",
+"tulip",
+"sunflower",
+"lavender"
+];
+
+for(let i=0;i<250;i++){
+
+    let flower=document.createElement("div");
+
+    let type=
+    flowerTypes[Math.floor(Math.random()*flowerTypes.length)];
+
+    flower.classList.add("flower");
+
+    flower.classList.add(type);
+
+    let size=Math.random()*20+24;
+
+    flower.style.width=size+"px";
+
+    flower.style.height=size+"px";
+
+    flower.style.left=Math.random()*100+"vw";
+
+    flower.style.bottom=
+    (60+Math.random()*140)+"px";
+
+    flower.style.animationDuration=
+    (Math.random()*3+2)+"s";
+
+    flower.innerHTML=`
+    <div class="stem"></div>
+    <div class="leaf leaf1"></div>
+    <div class="leaf leaf2"></div>
+    `;
+
+    let petals;
+
+    if(type==="rose") petals=7;
+    else if(type==="lavender") petals=5;
+    else if(type==="sunflower") petals=12;
+    else petals=8;
+
+    for(let j=0;j<petals;j++){
+
+        let petal=document.createElement("div");
+
+        petal.classList.add("petal");
+
+        petal.style.transform=
+        `rotate(${j*(360/petals)}deg)
+        translateY(-18px)`;
+
+        flower.appendChild(petal);
+    }
+
+    let center=document.createElement("div");
+
+    center.classList.add("center");
+
+    flower.appendChild(center);
+
+    document.body.appendChild(flower);
+}
+
+/* STOP PANDA WALK */
+
+setTimeout(()=>{
+
+    document.getElementById("panda")
+    .classList.add("stopWalk");
+
+},11000);
+
+</script>
+
+</body>
+</html>
